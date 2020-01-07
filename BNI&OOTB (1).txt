@@ -1,0 +1,119 @@
+Hi,
+
+Below is the procedure for bootnet on SS for your reference.
+
+first login in below server:-
+CXO - 15.250.95.10(unix credentails) { ex- mehrav / ch@ngeme123 }
+Fremont- scriptservs-192.168.72.56 -192.168.72.61(root/ssmssm)
+Boot net - 
+
+then,   console s<array name (ex s074-0)>
+then, ctrl + ECF 
+
+Login to all nodes(note that password changes as per version of array)
+USername - root
+PAssword – 3.2.2,3.3.1-cSDbfe32(version password) / 3.2.1- Jlnnd321 /ssmssm / TiSaSP331
+
+Get whack by pressing –ctrl+whack or ctrl+w
+/****
+telnet:
+On each node - give shutdownsys halt command
+On whack prompt - give reset. 
+****/
+
+Then Give command
+"boot net install-osm version=3.2.2.709 osm=pah-osmaster  >> MU2"
+
+
+boot net install version=3.2.2.612  >>  for CXO 
+
+
+boot net install-realmadrid version=3.3.1.269-EMU1    //for EMU1
+
+once BNI command is hit, will take around 15 mins to get login prompt or else manually press enter after a while
+
+#you get console:
+Login: root/ssmssm
+
+# after performing bootnet and getting console on all nodes run the below commands on any one node to 
+
+uninitialize inserv
+=====================
+onallnodes touch /common/etc/disable_strong_passwords
+onallnodes 'node_prep -y'
+onallnodes touch /var/opt/tpd/touchfiles/manualstartup
+onallnodes reboot
+
+login:- root /cSDbfe322 (version password).
+
+To verify version is installed
+---------------------------------
+showversion -b  >>>>  On failure of command >>>  onallnodes update_pwfile
+
+To verify system is up after BNI:
+-----------------------------------
+showsysmgr
+output: system is up running  
+ 
+ //if we r not getting this output :- If sys is requesting for manual startup on running
+                      showsysmgr command run below command.
+                       setsysmgr wipe [array name] //
+
+check for unintialized or not using this command
+shownet
+IP: 152.129.0.0
+
+
+To bring system in manual statup mode : su console >> option 6
+
+If sys is requesting for manual startup on running
+showsysmgr command run below command.
+setsysmgr wipe [array name] 
+-----------------------------------------
+
+
+****************************************************************************************************************************
+
+Milipitas Server link:- cxo-console1.cxo.storage.hpecorp.net { if u do not find the array on CXO}
+IRS Link:- dart.storage.hpecorp.net/irs/week.php?year=2018&month=5&day=30&area=42&room=1101 {to check whether the array is present or not}
+
+***********************************************************************************************
+
+
+OOTB
+--------------
+Select server as per the array(cxo or fremont) and login inot the server
+CXO - 15.250.95.10(unix credentails)
+Fremont- scriptservs-192.168.72.56 -192.168.72.61(root/ssmssm)
+
+OOTB specific to one node.
+
+Login to any one of the nodes(note that password changes as per version of array)
+USername - root
+PAssword – 3.2.2,3.3.1- cSDbfe322 / 3.2.1- Jlnnd321 /ssmssm / TiSaSP331
+
+Type "su console" and press enter
+This will give u number of options. select the option with OOTB
+
+su console
+1 OOTB
+select 1
+
+
+and just go with the flow with prompts and responses
+Enter IP, subnet, gateway, DNS, NTP, Timezone - All data are available in IRS
+
+In most of the case go with the default configuration, script will ask "Press enter to go wth default"
+
+Entire procedure would take around 15-20 mins(irrespective of number of nodes)
+
+
+-----------------------------------------------------------------
+Happy learning!!
+
+Feel free to shout at me for any kind of queries/feedbacks :)
+-----------------------------------------------------------------
+
+------Array IP=15.129.164.212--
+
+---SP IP---https://16.182.27.191:8443/
