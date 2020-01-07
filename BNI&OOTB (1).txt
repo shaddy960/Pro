@@ -12,9 +12,9 @@ then, ctrl + ECF
 
 Login to all nodes(note that password changes as per version of array)
 USername - root
-PAssword – 3.2.2,3.3.1-cSDbfe32(version password) / 3.2.1- Jlnnd321 /ssmssm / TiSaSP331
+PAssword â€“ 3.2.2,3.3.1-cSDbfe32(version password) / 3.2.1- Jlnnd321 /ssmssm / TiSaSP331
 
-Get whack by pressing –ctrl+whack or ctrl+w
+Get whack by pressing â€“ctrl+whack or ctrl+w
 /****
 telnet:
 On each node - give shutdownsys halt command
@@ -90,7 +90,7 @@ OOTB specific to one node.
 
 Login to any one of the nodes(note that password changes as per version of array)
 USername - root
-PAssword – 3.2.2,3.3.1- cSDbfe322 / 3.2.1- Jlnnd321 /ssmssm / TiSaSP331
+PAssword â€“ 3.2.2,3.3.1- cSDbfe322 / 3.2.1- Jlnnd321 /ssmssm / TiSaSP331
 
 Type "su console" and press enter
 This will give u number of options. select the option with OOTB
@@ -117,3 +117,14 @@ Feel free to shout at me for any kind of queries/feedbacks :)
 ------Array IP=15.129.164.212--
 
 ---SP IP---https://16.182.27.191:8443/
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+Updated-07/01/2020
+
+--SP IP- 16.182.11.174
+--Array- 15.250.119.50
+        name-S175Â 
+        version-3.2.2  
+
